@@ -1,0 +1,364 @@
+
+/************************************************
+*	body										*
+*************************************************/
+html, body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #878787;
+}
+
+/************************************************
+*	default classes								*
+*************************************************/
+
+/* remove the default blue border color on focus for all inputs, textareas and select */
+select:focus, option:focus, textarea:focus, input[type="text"]:focus, input[type="password"]:focus,
+input[type="datetime"]:focus, input[type="datetime-local"]:focus,
+input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus,
+input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus,
+input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus,
+input[type="color"]:focus, .uneditable-input:focus {
+  border-color: #CCCCCC !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset !important;
+}
+
+table td {
+	padding: 20px 10px !important;
+}
+
+table a {
+	font-weight: bold;
+}
+
+table .job-location {
+	text-align: right;
+}
+
+i {
+	font-size: 10px;
+}
+
+/* the sub-title */
+.sub-heading {
+	margin-bottom: 25px;
+}
+
+/* special class to use the yellowish color */
+.yellowish {
+	color: #EEA236;
+}
+
+/*
+ Remove borders from the btns and inputs
+ and reduce the border-radius
+ */
+.btn {
+	border: none;
+	border-radius: 3px;
+}
+
+.form-control {
+	border-radius: 3px;
+}
+
+/************************************************
+*	header  									*
+*************************************************/
+.navbar {
+	background-color: #3276B1;
+}
+
+.navbar .navbar-left {
+	margin-left: 200px;
+}
+
+.navbar .navbar-brand {
+	color: #f6f6f6;
+}
+
+
+/************************************************
+*	contents 		    						*
+*************************************************/
+.contents {
+    padding: 80px 0 40px;
+}
+
+
+/************************************************
+*	search container    						*
+*************************************************/
+#search-container {
+	margin: -30px 0 30px;
+    background-color: #F5F5F5;
+    height: 250px;
+}
+
+#search-container #search-box {
+	margin: auto;
+    width: 70%;
+    text-align: center;
+}
+
+#search-container #search-box h1 {
+	font-size: 3em;
+	padding: 10px 0 20px;
+}
+
+#search-container #search-box h1 strong {
+	color: #EEA236;
+}
+
+#search-container #search-box input {
+    background-image: url("../img/icon-search.png");
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    border: medium none !important;
+    font-size: 30px !important;
+    font-weight: 200;
+    height: 60px;
+    padding: 0 65px;
+}
+
+
+/************************************************
+*	featured container    						*
+*************************************************/
+#featured {
+
+}
+
+/* Give a special styling to paid or special jobs */
+#featured .featured {
+	background-color: rgba(238,162,54,0.1);
+}
+
+/* remove the background-color for any tr that has the default 2n+1 */
+#featured .featured:nth-child(2n+1) > td {
+	background-color: transparent;
+}
+
+/* boder color for paid or special jobs */
+#featured .featured:after {
+    border-right: 2px solid #EEA236;
+    content: " ";
+    display: block;
+    height: 101px;
+    position: absolute;
+    right: 15px;
+}
+
+/************************************************
+*	all jobs 									*
+*************************************************/
+#jobs {
+
+}
+
+/* Give a special styling to paid or special jobs */
+#jobs .featured {
+	background-color: rgba(238,162,54,0.1);
+}
+
+/* remove the background-color for any tr that has the default 2n+1 */
+#jobs .featured:nth-child(2n+1) > td {
+	background-color: transparent;
+}
+
+/* boder color for paid or special jobs */
+#jobs .featured:after {
+    border-right: 2px solid #EEA236;
+    content: " ";
+    display: block;
+    height: 101px;
+    position: absolute;
+    right: 15px;
+}
+
+/************************************************
+*	job detail 			 						*
+*************************************************/
+#job .content-inner-detail {
+	background-color: #F5F5F5;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+
+/************************************************
+*	post job 			 						*
+*************************************************/
+#post .content-inner-detail {
+	background-color: #F5F5F5;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+
+/************************************************
+*	login or register     						*
+*************************************************/
+.access {
+	min-height: 500px;
+}
+
+.access .content-inner-detail {
+	background-color: #F5F5F5;
+	border-radius: 3px;
+	padding: 20px;
+	max-width: 330px;
+	margin: auto;
+}
+
+
+/************************************************
+*	clients container    						*
+*************************************************/
+.clients {
+    background-color: #F5F5F5;
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/************************************************
+*	footer  									*
+*************************************************/
+footer {
+	background-color: #3276B1;
+	padding: 15px 0 5px;
+	color: #f6f6f6;
+}
+
+
+/*
+*************************************************
+* Media Queries for smaller screens 	        *
+*************************************************/
+
+/* Mobile (portrait and landscape) ------- */
+@media only screen and (min-width : 320px) and (max-width: 680px) {
+
+	/************************************************
+	*	header  									*
+	*************************************************/
+	.navbar {
+		height: auto;
+		text-align: center;
+	}
+
+	.navbar .navbar-left {
+		margin-left: 0;
+	}
+
+	.navbar-toggle {
+	    background-color: #FFFFFF;
+	    color: #EEA265;
+	}
+
+	.navbar-toggle .icon-bar {
+    	background-color: #EEA265;
+    	color: #EEA265;
+    }
+
+    .navbar-collapse {
+    	text-align: center;
+    	float: none;
+    }
+
+	/************************************************
+	*	contents 		    						*
+	*************************************************/
+	.contents {
+	    padding: 90px 0 0;
+	}
+
+	/************************************************
+	*	search container    						*
+	*************************************************/
+	#search-container {
+		margin: -40px 0 30px;
+	}
+
+	#search-container #search-box {
+	    width: 100%;
+	}
+
+	#search-container #search-box h1 {
+		font-size: 1.5em;
+		padding: 10px 0 20px;
+	}
+
+	#search-container #search-box input {
+	    background-image: url("../img/icon-search.png");
+	    background-position: 15px 15px;
+	    background-repeat: no-repeat;
+	    border: medium none !important;
+	    font-size: 20px !important;
+	    font-weight: 200;
+	    height: 60px;
+	    padding: 0 10px 0 65px;
+	}
+
+	/************************************************
+	*	footer  									*
+	*************************************************/
+	footer {
+		text-align: center;
+	}
+
+	footer .pull-left, footer .pull-right {
+		float: none !important;
+		display: block;
+	}
+
+}
+
+/* Tablets (portrait and landscape) ------- */
+@media only screen and (min-width : 680px) and (max-width: 1024px) {
+
+	/************************************************
+	*	header  									*
+	*************************************************/
+	.navbar {
+		height: auto;
+		text-align: center;
+	}
+
+	.navbar-toggle {
+	    background-color: #FFFFFF;
+	    color: #EEA265;
+	}
+
+	.navbar-toggle .icon-bar {
+    	background-color: #EEA265;
+    	color: #EEA265;
+    }
+
+    .navbar-collapse {
+    	text-align: center;
+    	float: none;
+    }
+
+    .navbar-collapse .navbar-right {
+    	display: inline-block;
+    	margin-left: 10px;
+    }
+
+    .navbar-collapse .navbar-left {
+    	display: inline-block;
+    	margin-right: 10px;
+    	margin-left: 0;
+    }
+
+	/************************************************
+	*	search container    						*
+	*************************************************/
+	#search-container #search-box h1 {
+		font-size: 2em;
+		padding: 10px 0 20px;
+	}
+}
+
