@@ -16,13 +16,17 @@
 		 <div class="collapse navbar-collapse navbar-ex1-collapse">
 		  	<div class="navbar-left">
 				<a href="jobs.html" class="btn btn-default navbar-btn">Browse all jobs &raquo;</a>
-		        <a href="post.html" class="btn btn-warning navbar-btn">Post a job &raquo;</a>
+		        <%= link_to 'Post a gig &raquo;'.html_safe, new_gig_path, class: "btn btn-warning navbar-btn" %>
 		  	</div>
 			<!-- the menu -->
 	  		<div class="navbar-right">
-	  			
-	  			<%= link_to 'Sign in', new_user_session_path, class:"btn btn-default navbar-btn" %>
-	  			<%= link_to 'Sign up', new_user_registration_path, class:"btn btn-warning navbar-btn" %>
+	  			<% if user_signed_in? %>
+		  			<%= link_to 'Edit Profile', edit_user_registration_path, class:"btn btn-info navbar-btn" %>
+		  			<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-warning navbar-btn" %>
+	  			<% else %>
+		  			<%= link_to 'Sign in', new_user_session_path, class:"btn btn-default navbar-btn" %>
+		  			<%= link_to 'Sign up', new_user_registration_path, class:"btn btn-warning navbar-btn" %>
+		  		<% end %>
 	      	</div>
 		</div>
 	</div><!-- /.container -->
