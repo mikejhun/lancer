@@ -1,0 +1,88 @@
+	<!-- the middle contents -->
+	<div class="contents">
+		<section id="job">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-3">
+						<h3 class="sub-heading">About Google</h3>
+						<p><strong>Google Enterprises</strong></p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at augue metus, at aliquam leo. Nam ac justo nisl. Ut non orci odio. Praesent lobortis blandit lacus et consectetur. Etiam ac sagittis tortor. Vestibulum vestibulum sem nec purus congue cursus. Sed bibendum lectus id tellus egestas sit amet interdum leo fringilla. Fusce dictum neque ut massa facilisis nec mattis erat blandit. In vel vestibulum massa.</p>
+						<p><a href="">company website &rarr;</a></p>
+					</div>
+					<div class="col-xs-12 col-md-9">
+						<h3 class="sub-heading">Job detail <span class="pull-right"><small><a href="index.html">&larr; All Jobs</a></small></span></h3>
+						<div class="content-inner-detail">
+							<h1 class="sub-heading"><%= @gig.name %></h1>
+							<p><i class="glyphicon glyphicon-calendar"></i><%= @gig.created_at.strftime('%B %d, %Y') %> | <i class="glyphicon glyphicon-map-marker"></i><%= @gig.location %> | <span class="label label-success">Freelance</span></p>
+							<hr>
+							<legend>Overview</legend>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at augue metus, at aliquam leo. Nam ac justo nisl. Ut non orci odio. Praesent lobortis blandit lacus et consectetur. Etiam ac sagittis tortor. Vestibulum vestibulum sem nec purus congue cursus. Sed bibendum lectus id tellus egestas sit amet interdum leo fringilla. Fusce dictum neque ut massa facilisis nec mattis erat blandit. In vel vestibulum massa.</p>
+							<legend>Description</legend>
+							<p><%= @gig.description %></p>
+							<h5>Summary</h5>
+							<ul>
+								<li>Freelancer</li>
+								<li>2-3 years is required</li>
+								<li>Located or willing to relocate to Berlin</li>
+								<li>€2000 - €3000 monthly salary</li>
+								<li>Pension benefit</li>
+							</ul>
+							<h5>Requirement</h5>
+							<ul>
+								<li>HMTL5</li>
+								<li>CSS3</li>
+								<li>JavaScript</li>
+								<li>jQuery / Mojo</li>
+								<li>Codeigniter (optional)</li>
+								<li>SEO (optional)</li>
+							</ul>
+							<legend>Apply</legend>
+							<form>
+						  		<div class="row">
+						  			<div class="col-xs-12 col-md-6">
+								    	<div class="form-group">
+									    <label for="">Full name</label>
+									    <input type="text" class="form-control input-lg">
+									    <small class="help-block">Example block-level help text here.</small>
+									  	</div>
+							    	</div>
+							    	<div class="col-xs-12 col-md-6">
+								    	<div class="form-group">
+									    <label for="">Emaill address</label>
+									    <input type="email" class="form-control input-lg">
+									    <small class="help-block">Example block-level help text here.</small>
+									  	</div>
+							    	</div>
+						    	</div>
+						    	<div class="form-group">
+						    	<label>Message to company</label>
+							    <textarea rows="3" class="form-control"></textarea>
+							    <small class="help-block">Example block-level help text here.</small>
+							    </div>
+							    <div class="row">
+						  			<div class="col-xs-12 col-md-6">
+						  				<div class="form-group">
+								    	<label>Upload cover letter</label>
+								    	<input type="file" class="">
+								    	<small class="help-block">Example block-level help text here.</small>
+								    	</div>
+							    	</div>
+							    	<div class="col-xs-12 col-md-6">
+							    		<div class="form-group">
+								    	<label>Upload resume / cv</label>
+								    	<input type="file" class="">
+								    	<small class="help-block">Example block-level help text here.</small>
+								    	</div>
+							    	</div>
+						    	</div>
+						    	<br>
+						    	<button type="submit" class="btn btn-primary input-lg">Submit application</button>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div><!-- /.contents -->
+
