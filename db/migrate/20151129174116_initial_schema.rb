@@ -8,6 +8,8 @@ class InitialSchema < ActiveRecord::Migration
   		t.string  :location
   		t.boolean :open, default: true
   		t.integer :awarded_proposal
+      t.float   :latitude
+      t.float   :longitude
   		t.timestamps 
     end
 

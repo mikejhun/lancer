@@ -13,6 +13,7 @@ gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 gem 'kaminari'
 gem 'faker', group: :development
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'
