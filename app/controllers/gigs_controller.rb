@@ -18,6 +18,10 @@ class GigsController < ApplicationController
 		@gig = Gig.find(params[:id])
 	end
 
+	def search
+		@julie = Gig.search(params).page(params[:page]).per(25)
+	end
+	
 	private
 		def gig_params
 			params.require(:gig).permit(:name, :description, :budget, :location, :open)
