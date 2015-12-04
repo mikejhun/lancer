@@ -11,6 +11,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
+gem 'kaminari'
+gem 'faker', group: :development
 
 group :development, :test do
   gem 'byebug'

@@ -84,118 +84,27 @@
 				</div>
 				<div class="col-xs-12 col-md-9">
 					<h3 class="sub-heading">
-						Featured jobs
-						<span class="pull-right"><small>1 - 20 results</small></span>
+						Gigs
+						<span class="pull-right"><small>1 - 25 results</small></span>
 					</h3>
 					<table class="table table-striped">
 					  <tbody>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">Junior Applications Engineer</a> <small class="label label-success">Full time</small></p>
-				  				<p>Google Enterprises</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 20 Jan 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Berlin, Germany</p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">Senior Applications Engineer</a> <small class="label label-info">Freelance</small></p>
-				  				<p>Youtube</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 22 Jun 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Dresden, Germany</p>
-				  			</td>
-				  		</tr>
-				  		<tr class="featured">
-				  			<td>
-				  				<p><a href="job.html">Software Engineer</a> <small class="label label-warning">Part time</small></p>
-				  				<p>Tesco Mall</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 01 Feb 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Amsterdam, Holland</p>
-				  			</td>
-				  		</tr>
-				  		<tr class="featured">
-				  			<td>
-				  				<p><a href="job.html">Front-end Developer</a> <small class="label label-success">Full time</small></p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">Back-end Developer</a> <small class="label label-success">Full time</small></p>
-				  				<p>Air France</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 10 May 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Paris, France</p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">PHP Programmer</a> <small class="label label-warning">Part time</small></p>
-				  				<p>Wizz Air</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 25 Jan 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Oslo, Norway</p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">HMTL5/CSS3/JavaScript Coder</a> <small class="label label-info">Freelance</small></p>
-				  				<p>Small Agency</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 19 Mar 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Califonia, USA</p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">Java Programmer</a> <small class="label label-info">Freelance</small></p>
-				  				<p>Google Enterprises</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 08 Jul 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Berlin, Germany</p>
-				  			</td>
-				  		</tr>
-				  		<tr>
-				  			<td>
-				  				<p><a href="job.html">IOS Developer</a> <small class="label label-info">Freelance</small></p>
-				  				<p>6wunderers</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 11 Feb 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Frankfurt, Germany</p>
-				  			</td>
-				  		</tr>
-				  		<tr class="featured">
-				  			<td>
-				  				<p><a href="job.html">C# .NET Developer</a> <small class="label label-info">Freelance</small></p>
-				  				<p>Microsoft Corp.</p>
-				  			</td>
-				  			<td class="job-location">
-				  				<p><i class="glyphicon glyphicon-calendar"></i> 22 Dec 2013</p>
-				  				<p><i class="glyphicon glyphicon-map-marker"></i> Cape Town, South Africa</p>
-				  			</td>
-				  		</tr>
+					  	<% @julie.each do |mike| %>
+					  		<tr>
+					  			<td>
+					  				<p><%= link_to mike.name, mike %></a> <small class="label label-success">Full time</small></p>
+					  				<p>Google Enterprises</p>
+					  			</td>
+					  			<td class="job-location">
+					  				<p><i class="glyphicon glyphicon-calendar"></i><%= mike.created_at.strftime('%B %d, %Y') %></p>
+					  				<p><i class="glyphicon glyphicon-map-marker"></i><%= mike.location %></p>
+					  			</td>
+					  		</tr>
+					  	<% end %>
 					  </tbody>
 					</table>
 					<div class="pull-right">
-						<ul class="pagination">
-						  <li><a href="#">&laquo;</a></li>
-						  <li class="active"><span>1</span></li>
-						  <li><a href="#">2</a></li>
-						  <li><a href="#">3</a></li>
-						  <li><a href="#">4</a></li>
-						  <li><a href="#">5</a></li>
-						  <li><a href="#">&raquo;</a></li>
-						</ul>
+						<%= paginate @julie %>
 					</div>
 				</div>
 			</div>
