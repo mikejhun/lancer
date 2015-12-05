@@ -26,6 +26,13 @@
 							<div class='row'>
 								<div class='col-xs-12 col-md-6'>
 									<div class='form-group'>
+										<%= f.label :category_id %>
+										<%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), {}, class: 'form-control input-lg' %>
+										<small class='help-block'>Enter the category you want for this gig.</small>
+									</div>
+								</div>
+								<div class='col-xs-12 col-md-6'>
+									<div class='form-group'>
 										<%= f.label :location %>
 										<%= f.text_field :location, class: 'form-control input-lg' %>
 										<small class='help-block'>(Denver, San Francisco, Remote, etc.)</small>
@@ -42,6 +49,11 @@
 								</div>
 							</div>	
 							<br>
+							<legend>List skills required for this gig.</legend>
+							<div class="form-group">
+								<%= f.text_area :skill_list, rows: 3, class: 'form-control input-lg' %>
+								<small class='help-block'>Separate skills with a comma.</small>
+							</div>
 							<%= f.submit class: 'btn btn-primary input-lg' %>		
 						<% end %>
 					</div>
