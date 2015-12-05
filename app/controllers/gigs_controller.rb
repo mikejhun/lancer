@@ -16,10 +16,11 @@ class GigsController < ApplicationController
 
 	def show
 		@gig = Gig.find(params[:id])
+		@proposals = @gig.proposals.order(created_at: :desc)
 	end
 
 	def search
-		@julie = Gig.search(params).page(params[:page]).per(25)
+		@julie = Gig.search(params).order("created_at DESC").page(params[:page]).per(25)
 	end
 	
 	private
