@@ -14,6 +14,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'faker', group: :development
 gem 'geocoder'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
