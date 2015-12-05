@@ -38,6 +38,6 @@ end
 				budget: rand(200..10000),
 				location: location.sample,
 				user_id: rand(1..10),
-				category_id: rand(1..3))
+				category_id: rand(1..7))
 end
 
