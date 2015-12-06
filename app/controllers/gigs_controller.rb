@@ -17,6 +17,13 @@ class GigsController < ApplicationController
 	def show
 		@gig = Gig.find(params[:id])
 		@proposals = @gig.proposals.order(created_at: :desc)
+		@awarded_proposal = Proposal.where(id: @gig.awarded_proposal).first
+	end
+
+	def update
+		@gig = Gig.find(params[:id])
+		@gig.update(gig_params)
+		redirect_to @gig
 	end
 
 	def search
@@ -25,7 +32,7 @@ class GigsController < ApplicationController
 	
 	private
 		def gig_params
-			params.require(:gig).permit(:name, :description, :budget, :location, :open, :category_id, :skill_list)
+			params.require(:gig).permit(:name, :description, :budget, :location, :open, :category_id, :skill_list, :awarded_proposal)
 		end
 
 	end

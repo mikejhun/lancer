@@ -53,8 +53,37 @@
 					</div>
 				</div>
 
+				<% if @awarded_proposal.present? %>
+					<div class='col-xs-12 col-md-8'>
+						<h3 class='sub-heading'>Awarded Proposal</h3>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-md-4">
+											<h3 class="panel-title"><%= @awarded_proposal.user %></h3>
+										</div>
+										<div class="col-md-4">
+											<h3 class="panel-title">
+											Bid: <%= number_to_currency(@awarded_proposal.bid, precision: 2) %>
+											</h3>
+										</div>
+										<div class="col-md-4">
+											<h3 class="panel-title">
+											Posted: <%= @awarded_proposal.created_at.strftime('%B %d, %Y') %>
+											</h3>
+										</div>
+									</div>
+								</div>
+								<div class="panel-body">
+									<%= @awarded_proposal.description %>
+								</div>
+							</div>
+					</div>
+				<% end %>
+
 				<div class="col-xs-12 col-md-8">
 					<h3 class="sub-heading">Proposals</h3>
+
 						<% if @proposals.present? %>
 							<% @proposals.each do |proposal| %>
 								<div class="panel panel-default">
@@ -80,6 +109,8 @@
 									</div>
 									<div class="panel-footer">
 										<%= form_for @gig, method: :put do |f| %>
+											<%= f.hidden_field :awarded_proposal, value: proposal.id %>
+										<%= f.hidden_field :open, value: false %>
 											<%= f.submit "Award Proposal" %>
 										<% end %>
 									</div>
