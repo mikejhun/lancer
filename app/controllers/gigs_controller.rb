@@ -2,6 +2,7 @@ class GigsController < ApplicationController
 
 	def index
 		@julie = Gig.all.order("created_at DESC").page(params[:page]).per(25)
+		@users = User.all
 	end
 
 	def new
