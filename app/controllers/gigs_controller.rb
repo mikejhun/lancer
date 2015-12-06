@@ -14,16 +14,27 @@ class GigsController < ApplicationController
 		redirect_to @gig
 	end
 
+
 	def show
 		@gig = Gig.find(params[:id])
 		@proposals = @gig.proposals.order(created_at: :desc)
 		@awarded_proposal = Proposal.where(id: @gig.awarded_proposal).first
 	end
 
+	def edit
+		@gig = Gig.find(params[:id])
+	end
+	
 	def update
 		@gig = Gig.find(params[:id])
 		@gig.update(gig_params)
 		redirect_to @gig
+	end
+
+	def destroy
+		@gig = Gig.find(params[:id])
+		@gig.destroy
+		redirect_to :mygigs
 	end
 
 	def search

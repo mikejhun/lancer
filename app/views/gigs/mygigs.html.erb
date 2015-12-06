@@ -26,8 +26,8 @@
 					<td><%= gig.category.name %></td>
 					<td><%= number_to_currency(gig.budget, precision:2) %></td>
 					<td class='text-center'><%= gig.proposals.count %></td>
-					<td>Edit</td>
-					<td>Delete</td>
+					<td><%= link_to 'Edit', edit_gig_path(gig) %></td>
+					<td><%= link_to 'Delete', gig, method: :delete, data: {confirm: 'Are you sure?'} %></td>
 				</tr>
 			<% end %>
 		</tbody>

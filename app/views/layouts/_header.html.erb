@@ -21,6 +21,7 @@
 			<!-- the menu -->
 	  		<div class="navbar-right">
 	  			<% if user_signed_in? %>
+	  				<%= link_to "My Gigs", mygigs_path, class: 'btn btn-success navbar-btn'%>
 		  			<%= link_to 'Edit Profile', edit_user_registration_path, class:"btn btn-info navbar-btn" %>
 		  			<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-warning navbar-btn" %>
 	  			<% else %>
