@@ -29,6 +29,10 @@ class GigsController < ApplicationController
 	def search
 		@julie = Gig.search(params).order("created_at DESC").page(params[:page]).per(25)
 	end
+
+	def mygigs
+		@gigs = Gig.where(user_id: current_user).order(created_at: :asc)
+	end
 	
 	private
 		def gig_params

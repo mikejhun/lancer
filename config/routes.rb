@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   	end
   end
   root 'gigs#index'
+
+  get '/mygigs' => 'gigs#mygigs'
 end
