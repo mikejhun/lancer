@@ -1,4 +1,5 @@
 class GigsController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :search, :show]
 
 	def index
 		@julie = Gig.all.order("created_at DESC").page(params[:page]).per(25)
@@ -11,8 +12,13 @@ class GigsController < ApplicationController
 
 	def create
 		@gig = Gig.new(gig_params)
-		@gig.save
-		redirect_to @gig
+		@gig.user = current_user
+		if @gig.save
+			redirect_to @gig
+		else
+			flash[:error] = @gig.errors.full_messages.to_sentence
+			render :new
+		end
 	end
 
 
@@ -24,17 +30,29 @@ class GigsController < ApplicationController
 
 	def edit
 		@gig = Gig.find(params[:id])
+		if current_user != @gig.user
+			flash[:error] = 'You are not the owner!'
+			redirect_to @gig
+		end
 	end
 	
 	def update
 		@gig = Gig.find(params[:id])
-		@gig.update(gig_params)
+		if current_user == @gig.user
+			@gig.update(gig_params)
+		else
+			flash[:error] = 'You are not the owner!'
+		end
 		redirect_to @gig
 	end
 
 	def destroy
 		@gig = Gig.find(params[:id])
-		@gig.destroy
+		if current_user == @gig.user
+			@gig.destroy
+		else
+		flash[:error] = 'You are not the owner!'
+		end
 		redirect_to :mygigs
 	end
 
