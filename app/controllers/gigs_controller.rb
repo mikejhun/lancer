@@ -39,7 +39,11 @@ class GigsController < ApplicationController
 	end
 
 	def search
+		if params[:category].blank? && params[:search].blank?
+			@julie = Gig.all.order(created_at: :desc).page(params[:page]).per(25)
+		else
 		@julie = Gig.search(params).order("created_at DESC").page(params[:page]).per(25)
+		end
 	end
 
 	def mygigs

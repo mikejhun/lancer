@@ -3,7 +3,7 @@
 	<section id="search-container">
 		<div class="container">
 			<div id="search-box">
-				<h1>We currently have <strong>25,011</strong> job posts but only <strong>10,111</strong> applicants</h1>
+				<h1>Your search resulted in <strong><%= @julie.total_count %></strong> gigs.</h1>
 				<%= form_tag search_gigs_path, method: :get do |f| %>
 					<%= text_field_tag :search, nil, placeholder: "Example: Software Developer", class: "col-md-9" %>
 					<%= submit_tag "Search", class: "col-md-3 btn btn-primary" %>
@@ -12,55 +12,6 @@
 			</div>
 		</div>
 	</section>
-	<section id="featured">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-md-3">
-					<h3 class="sub-heading">Advance search</h3>
-
-					<%= form_tag search_gigs_path, method: :get do |f| %>
-							<div class='form-group'>
-								<label>Search</label>
-								<%= text_field_tag :search, nil, placeholder: "Developer, Accountant, etc.", class: 'form-control input-lg' %>
-							</div>
-							<label>Category</label>					
-								<div class='form-group'>
-								<%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name), class: 'form-control input-lg' %>
-							</div>
-							<label>Location</label>	
-								<div class='form-group'>
-								<%= text_field_tag :location, nil, placeholder: "Denver, Miami, etc.", class: 'form-control input-lg' %>
-							</div>
-							<%= submit_tag "Search", class: 'btn btn-primary input-lg btn-block' %>
-					
-					<% end %>
-				</div>
-				<div class="col-xs-12 col-md-9">
-					<h3 class="sub-heading">
-						Gigs
-						<span class="pull-right"><small>1 - 25 results</small></span>
-					</h3>
-					<table class="table table-striped">
-					  <tbody>
-					  	<% @julie.each do |mike| %>
-					  		<tr>
-					  			<td>
-					  				<p><%= link_to mike.name, mike %></a> <small class="label label-success">Full time</small></p>
-					  				<p>Google Enterprises</p>
-					  			</td>
-					  			<td class="job-location">
-					  				<p><i class="glyphicon glyphicon-calendar"></i><%= mike.created_at.strftime('%B %d, %Y') %></p>
-					  				<p><i class="glyphicon glyphicon-map-marker"></i><%= mike.location %></p>
-					  			</td>
-					  		</tr>
-					  	<% end %>
-					  </tbody>
-					</table>
-					<div class="pull-right">
-						<%= paginate @julie %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
+	<%= render 'layouts/gig_listings' %>
 </div><!-- /.contents -->

@@ -12,58 +12,6 @@
 			</div>
 		</div>
 	</section>
-	<section id="featured">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-md-3">
-					<h3 class="sub-heading">Advance search</h3>
-
-					<%= form_tag search_gigs_path, method: :get do |f| %>
-							<div class='form-group'>
-								<label>Search</label>
-								<%= text_field_tag :search, nil, placeholder: "Developer, Accountant, etc.", class: 'form-control input-lg' %>
-							</div>
-							<label>Category</label>					
-								<div class='form-group'>
-								<%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name), class: 'form-control input-lg' %>
-							</div>
-							<label>Location</label>	
-								<div class='form-group'>
-								<%= text_field_tag :location, nil, placeholder: "Denver, Miami, etc.", class: 'form-control input-lg' %>
-							</div>
-							<%= submit_tag "Search", class: 'btn btn-primary input-lg btn-block' %>
-					
-					<% end %>
-				</div>
-				<div class="col-xs-12 col-md-9">
-					<h3 class="sub-heading">
-						Gigs
-						<span class="pull-right"><small>1 - 25 results</small></span>
-					</h3>
-					<table class="table table-striped">
-					  <tbody>
-					  	<% @julie.each do |mike| %>
-					  		<tr>
-					  			<td class='col-md-6'>
-					  				<p><%= link_to mike.name, mike %></a> <small class="label label-success"><%= number_to_currency(mike.budget, precision:2) %></small></p>
-					  				<p><%= h truncate(mike.description, length: 500) %></p>
-					  				<p>Skills: <%= mike.skills.map {|s| s.name}.join(", ") %></p>
-       				  			</td>
-       				  			<td><%= mike.category.name %>
-       				  			</td>
-					  			<td class="job-location">
-					  				<p><i class="glyphicon glyphicon-calendar"></i><%= mike.created_at.strftime('%B %d, %Y') %></p>
-					  				<p><i class="glyphicon glyphicon-map-marker"></i><%= mike.location %></p>
-					  			</td>
-					  		</tr>
-					  	<% end %>
-					  </tbody>
-					</table>
-					<div class="pull-right">
-						<%= paginate @julie %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
+	<%= render 'layouts/gig_listings' %>
 </div><!-- /.contents -->
