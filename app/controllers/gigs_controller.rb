@@ -2,7 +2,7 @@ class GigsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :search, :show]
 
 	def index
-		@julie = Gig.all.order("created_at DESC").page(params[:page]).per(25)
+		@julie = Gig.all.order_list(params[:sort_by]).page(params[:page]).per(25)
 		@users = User.all
 	end
 
